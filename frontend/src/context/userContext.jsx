@@ -9,7 +9,7 @@ export const UserContextProvider = ({children}) =>{
 
     const fetchlogedinuser= async()=>{
         try {
-            const res =  await axios.get("http://localhost:5000/api/user/loginuser",{withCredentials:true})
+            const res =  await axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/user/loginuser`,{withCredentials:true})
             setuser(res.data)
             
           } catch (error) {
