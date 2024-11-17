@@ -10,7 +10,7 @@ function HomePost({title,desc,file,id}) {
     {/* Left */}
     <div className=' w-[35%]'>
       {/* {console.log(post) +"kk"} */}
-        <img className='w-[100%] h-[100%] md:max-w-96 rounded object-fill' src={`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/images/${file}`}  alt="img" />
+        <img className='w-[100%] h-[100%] md:max-w-96 rounded object-fill' src={`http://localhost:5000/images/${file}`}  alt="img" />
     </div>
     {/* Right */}
     <div className='max-w-[65%]  tracking-tighter flex-col justify-between space-y-1 px-1   overflow-hidden'>

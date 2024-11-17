@@ -15,7 +15,7 @@ function PostDetails() {
   const fetchpostDetails = async () => {
     try {
       const res = await axios.get(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/post/getpost/${id}`
+        `http://localhost:5000/api/post/getpost/${id}`
       );
       setPost(res.data.post);
     } catch (error) {
@@ -30,7 +30,7 @@ function PostDetails() {
   const handeldelete = async (id) => {
     try {
       const res = await axios.delete(
-        `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/post/deletepost/${id}`
+        `http://localhost:5000/api/post/deletepost/${id}`
       );
       toast.success(res.data.message);
       navigate("/");
@@ -63,7 +63,7 @@ function PostDetails() {
       <div className="flex flex-col justify-between gap-4">
         <img
           className="max-h-[400px] md:max-w-[1000px] m-auto object-fit rounded"
-          src={`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/images/${post.file}`}
+          src={`http://localhost:5000/images/${post.file}`}
           alt="image"
         />
 
