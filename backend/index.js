@@ -1,5 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose'
+import dotenv, { config } from 'dotenv';
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import { connectDB } from './DB/connectDB.js'

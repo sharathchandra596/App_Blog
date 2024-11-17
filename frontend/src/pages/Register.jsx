@@ -12,6 +12,8 @@ function Register() {
   const handelsubmit= async(e)=>{
     try {
       e.preventDefault()
+      console.log(import.meta.env.VITE_REACT_APP_BACKEND_BASEURL);
+      
     const res=  await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/user/register`,{username,email,password})
     console.log(res.data);
     toast.success("User created successfully")
