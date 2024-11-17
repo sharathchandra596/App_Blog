@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 export const connectDB= async()=>{
     try {
-        await mongoose.connect(process.env.MONGO_URL,{
+        await mongoose.connect("mongodb+srv://sharathjoshi596:sharathjoshi596@cluster0.hpq1v.mongodb.net/?retryWrites=true",{
             dbName:"Blog_App-2"
         })
 
