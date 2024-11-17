@@ -7,7 +7,7 @@ import userRoute from './routes/userRoute.js'
 import postRouter from './routes/postRouter.js'
 import { errorMiddleware } from './middlewares/errorMiddleware.js'
 const app = express()
-
+dotenv.config()
 app.use(express.json())
 app.use(cors({
     origin: ["http://localhost:5173"],
@@ -17,9 +17,9 @@ app.use(cors({
 app.use(cookieParser())
 app.use(express.static("public"))
 
-app.listen(5000, () => {
+app.listen(process.env.PORT, () => {
     connectDB()
-    console.log("Server is running on port 5000")
+    console.log(`Server is running on port ${process.env.PORT}`)
 })
 
 app.use("/api/user",userRoute)

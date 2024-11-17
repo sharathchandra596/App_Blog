@@ -11,7 +11,7 @@ export const verifyUser = (req, res, next) => {
         return next(new ErrorHandler(400,"user not loged in"))
     }
 
-    const decodedToken= jwt.verify(token,"jwt-secret")
+    const decodedToken= jwt.verify(token,process.env.JWT_SECRET)
     req.username= decodedToken.username
     req.email= decodedToken.email
     next()
