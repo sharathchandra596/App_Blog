@@ -62,7 +62,7 @@ export const login= async (req, res, next)=>{
         res.cookie("token",token,{
             httpOnly: true,  // makes the cookie inaccessible to JavaScript (important for security)
             secure: true ,// true in production, false in development
-            // sameSite: "Strict", // Adjust according to your needs
+            sameSite: "Strict", // Adjust according to your needs
             maxAge: 24 * 60 * 60 * 1000, // optional: set cookie expiration (1 day)
         }).json({
             success:true,
