@@ -11,14 +11,14 @@ const app = express()
 dotenv.config()
 app.use(express.json())
 app.use(cors({
-    origin: ["http://localhost:5173"],
+    origin: [process.env.FRONTEND_URL],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"]
 }))
 app.use(cookieParser())
 app.use(express.static("public"))
 
-app.listen(5000, () => {
+app.listen(process.env.PORT, () => {
     connectDB()
     console.log(`Server is running on port 5000}`)
 })
