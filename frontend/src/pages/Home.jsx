@@ -6,7 +6,7 @@ function Home() {
   const[posts,setposts]=useState([])
   const fetchposts= async ()=>{
     try {
-     const res= await axios.get(`http://localhost:5000/api/post/getposts`)
+     const res= await axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/post/getposts`)
     setposts(res.data.allposts)
     } catch (error) {
         console.log(error);

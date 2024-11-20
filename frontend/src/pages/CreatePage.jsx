@@ -19,7 +19,7 @@ function CreatePage() {
             formData.append("desc",desc)
             formData.append("file",file)
             formData.append("email",user.email)
-            const res= await axios.post(`http://localhost:5000/api/post/create`, formData,{withCredentials:true})
+            const res= await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/post/create`, formData,{withCredentials:true})
             console.log(res.data);
             toast.success(res.data.message)
             navigate("/")

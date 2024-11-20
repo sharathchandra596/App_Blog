@@ -11,7 +11,7 @@ function Navbar() {
 
   const handelLogout=async()=>{
     try {
-      await axios.get(`http://localhost:5000/api/user/logout`,{withCredentials:true})
+      await axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/user/logout`,{withCredentials:true})
       navigate(0)
       
     } catch (error) {

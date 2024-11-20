@@ -14,7 +14,7 @@ function Login() {
     e.preventDefault()
     try {
       
-     const res= await axios.post(`http://localhost:5000/api/user/login`, {email,password},{withCredentials:true})
+     const res= await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/user/login`, {email,password},{withCredentials:true})
      console.log(res.data);
 
      navigate("/")

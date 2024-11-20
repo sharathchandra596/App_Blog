@@ -15,7 +15,7 @@ function EditPost() {
         try {
          
           
-            const res= await axios.put(`http://localhost:5000/api/post/editpost/${id}`, {title,desc},{withCredentials:true})
+            const res= await axios.put(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/post/editpost/${id}`, {title,desc},{withCredentials:true})
             console.log(res.data);
             toast.success(res.data.message)
             navigate("/")
@@ -32,7 +32,7 @@ function EditPost() {
     const fetchOldData= async ()=>{
          try {
 
-      const res = await axios.get(`http://localhost:5000/api/post/getpost/${id}`);
+      const res = await axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/post/getpost/${id}`);
       setTitle(res.data.post.title);
       setDesc(res.data.post.desc);
     } catch (error) {
