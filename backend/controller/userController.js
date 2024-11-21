@@ -59,17 +59,17 @@ export const login= async (req, res, next)=>{
     
         const token = jwt.sign({email: isUser.email,username:isUser.username},process.env.JWT_SECRET,{expiresIn:"1d"})
 
-        res.cookie("token",token,{
-            httpOnly: true,  // makes the cookie inaccessible to JavaScript (important for security)
-            secure: true ,// true in production, false in development
-            sameSite: "Strict", // Adjust according to your needs
-            maxAge: 24 * 60 * 60 * 1000, // optional: set cookie expiration (1 day)
+        res.status(201).cookie("token",token,{
+            httpOnly: true,  
+            secure: true ,
+            sameSite: "none",
+            maxAge: 24 * 60 * 60 * 1000, 
         }).json({
             success:true,
             user:isUser
         })
 
-        res.status(201)
+        
 
 
     } catch (error) {

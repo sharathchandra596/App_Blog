@@ -10,12 +10,12 @@ import { errorMiddleware } from './middlewares/errorMiddleware.js'
 const app = express()
 dotenv.config()
 app.use(express.json())
+app.use(cookieParser())
 app.use(cors({
     origin: [process.env.FRONTEND_URL],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"]
 }))
-app.use(cookieParser())
 app.use(express.static("public"))
 
 app.listen(process.env.PORT, () => {
